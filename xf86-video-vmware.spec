@@ -6,11 +6,11 @@
 #
 Name     : xf86-video-vmware
 Version  : 13.3.0
-Release  : 1
+Release  : 2
 URL      : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source0  : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source99 : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2.sig
-Summary  : No detailed summary available
+Summary  : X.org vmware video driver
 Group    : Development/Tools
 License  : ICU MIT
 Requires: xf86-video-vmware-lib = %{version}-%{release}
@@ -64,7 +64,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552929126
+export SOURCE_DATE_EPOCH=1553012153
+export CFLAGS="-O3 -g -fopt-info-vec "
+unset LDFLAGS
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -77,7 +79,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1552929126
+export SOURCE_DATE_EPOCH=1553012153
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xf86-video-vmware
 cp COPYING %{buildroot}/usr/share/package-licenses/xf86-video-vmware/COPYING
