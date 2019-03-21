@@ -6,7 +6,7 @@
 #
 Name     : xf86-video-vmware
 Version  : 13.3.0
-Release  : 2
+Release  : 4
 URL      : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source0  : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source99 : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2.sig
@@ -64,7 +64,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1553012153
+export SOURCE_DATE_EPOCH=1553163082
+unset LD_AS_NEEDED
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
 export LDFLAGS="${LDFLAGS} -fno-lto"
@@ -79,7 +80,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1553012153
+export SOURCE_DATE_EPOCH=1553163082
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xf86-video-vmware
 cp COPYING %{buildroot}/usr/share/package-licenses/xf86-video-vmware/COPYING
