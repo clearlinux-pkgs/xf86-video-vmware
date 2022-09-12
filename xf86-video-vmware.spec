@@ -6,7 +6,7 @@
 #
 Name     : xf86-video-vmware
 Version  : 13.3.0
-Release  : 58
+Release  : 59
 URL      : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source0  : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2
 Source99 : https://www.x.org/releases/individual/driver/xf86-video-vmware-13.3.0.tar.bz2.sig
